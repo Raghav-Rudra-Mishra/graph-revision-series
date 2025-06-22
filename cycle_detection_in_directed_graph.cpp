@@ -13,7 +13,7 @@ private:
         for(int nbr : adj[node]){
             if(!vis[nbr]){
                 if(hasCycle(nbr,node,adj,vis,pathVis)) return true;
-            }else if(pathVis[nbr] && nbr!=parent){
+            }else if(pathVis[nbr]){
                 return true;
             }
         }
@@ -85,7 +85,7 @@ int main(){
 };
 
     cout<<"expected result"<<endl;
-    
+
 for(auto testcase:test_cases_directed_cycle_detection){
     int v = get<0>(testcase);
     vector<vector<int>> adj = get<1>(testcase);
